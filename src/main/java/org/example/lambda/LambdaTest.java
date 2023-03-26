@@ -2,5 +2,5 @@ package org.example.lambda;
 
 public interface LambdaTest {
 
-    String test(String name, int age);
+    String test(String id, String name, String email);
 }

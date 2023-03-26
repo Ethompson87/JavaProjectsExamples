@@ -5,51 +5,58 @@ import java.util.Scanner;
 
 
 public class MainLambda {
+
     public static void main(String[] args) {
 
-        Scanner information = new Scanner(System.in);
 
-        String name;
-        int age;
-        boolean restartInput;
-
-        while (restartInput = true) {
 
             try {
+                Scanner information = new Scanner(System.in);
+
+                String employeeIdNumber;
+                String employeeName;
+                String employeeEmail;
+
+
+                System.out.print("Enter your ID number: ");
+                employeeIdNumber = information.next();
 
                 System.out.print("Enter your name: ");
-                name = information.next();
+                employeeName = information.next();
 
-
-                if (Integer.parseInt(name) == Integer.parseInt(name)) {
-                    System.out.println("This isn't a character.");
-                    restartInput = true;
-                }
-
-
-                System.out.print("Enter your current age: ");
-                age = information.nextInt();
-
+                System.out.print("Enter your email: ");
+                employeeEmail = information.next();
 
                 //Lambda with a return statement
-                LambdaTest nameAge = (na, ag) -> {
+                LambdaTest nameAge = (id, name, email) -> {
 
-                    return "\n" + "This Lambda is with a return statement" + "\n" + "Your name is " + na + "\n" + "Your age is : " + ag + "\n";
+                    return  "\n" + "This Lambda is with a return statement" +
+                            "\n" + "--------------------------------------" +
+                            "\n" + "ID Number: " + id +
+                            "\n" + "Name: " + name +
+                            "\n" + "Email: " + email +
+                            "\n";
                 };
 
-                System.out.println(nameAge.test(name, age));
+                System.out.println(nameAge.test(employeeIdNumber, employeeName, employeeEmail));
 
                 //Lambda with void method
-                LambdaTest2 nameAge2 = (na, ag) -> {
+                 LambdaTest2 nameAge2 = (id, name, email) -> {
 
                     System.out.println("This Lambda is with void method");
-                    System.out.println("Your name is " + na + "\n" + "Your age is : " + ag);
+                    System.out.println("--------------------------------");
+                    System.out.println("Employee ID Number: " + id);
+                    System.out.println("Employee Name " + name);
+                    System.out.println("Employee Email : " + email);
                 };
-                nameAge2.test2(name, age);
-            } catch (Exception error) {
-                System.out.println("There was an error with your request");
+                nameAge2.test2(employeeIdNumber, employeeName, employeeEmail);
+
+
             }
-        }
+            catch(Exception error){
+                System.out.println("There was an error with your input");
+                }
+
     }
 
 }
