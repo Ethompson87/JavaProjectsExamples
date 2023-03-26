@@ -12,15 +12,6 @@ public class MainLambda {
             System.out.print("Enter your name: ");
             String name = information.next();
 
-//            if (){
-//                System.out.println("This isn't a string");
-//                System.exit(0);
-//            }
-//            else {
-//
-//            }
-
-
             System.out.print("Enter your current age: ");
             int age = information.nextInt();
 
