@@ -46,7 +46,7 @@ public class MainLambda {
                     System.out.println("This Lambda is with void method");
                     System.out.println("--------------------------------");
                     System.out.println("Employee ID Number: " + id);
-                    System.out.println("Employee Name " + name);
+                    System.out.println("Employee Name: " + name);
                     System.out.println("Employee Email : " + email);
                 };
                 nameAge2.test2(employeeIdNumber, employeeName, employeeEmail);
