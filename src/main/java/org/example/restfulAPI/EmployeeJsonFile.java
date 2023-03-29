@@ -55,10 +55,10 @@ public class EmployeeJsonFile {
 
             //Create am JSONObject that lists ID, Name, Email, and Skills(JSONArray)
             JSONObject employee = new JSONObject();
-            employee.put("ID: ", employeeId);
-            employee.put("Name: ", employeeName);
-            employee.put("Email: ", employeeEmail);
-            employee.put("Skills: ", skillsList);
+            employee.put("ID", employeeId);
+            employee.put("Name", employeeName);
+            employee.put("Email", employeeEmail);
+            employee.put("Skills", skillsList);
 
             //Create JSONObject to add the JSONObject(list)
             JSONObject employees = new JSONObject();
