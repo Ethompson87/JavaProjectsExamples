@@ -14,53 +14,56 @@ public class EmployeeJsonFile {
 
     public static void main(String[] args) {
 
-        String employeeId;
-        String employeeName;
-        String employeeEmail;
-        String skillOne;
-        String skillTwo;
-        String skillThree;
-
-
-        //Created Scanner to collect input for ID, Name, and Email
+        //Created Scanner to input information into variables and created an instance of the EmployeeVariables class
         Scanner informationInput = new Scanner(System.in);
+        EmployeeVariables variables = new EmployeeVariables();
+
         try {
 
             System.out.print("Enter ID number: ");
-            employeeId = informationInput.next();
+            String employeeId = informationInput.next();
+            variables.setEmployeeId(employeeId);
 
             System.out.print("Enter Name: ");
-            employeeName = informationInput.next();
+            String employeeName = informationInput.next();
+            variables.setEmployeeName(employeeName);
 
             System.out.print("Enter Email: ");
-            employeeEmail = informationInput.next();
+            String employeeEmail = informationInput.next();
+            variables.setEmployeeEmail(employeeEmail);
 
             System.out.print("Enter first skill: ");
-            skillOne = informationInput.next();
+            String skillOne = informationInput.next();
+            variables.setSkillOne(skillOne);
 
             System.out.print("Enter second skill: ");
-            skillTwo = informationInput.next();
+            String skillTwo = informationInput.next();
+            variables.setSkillTwo(skillTwo);
 
             System.out.print("Enter third skill: ");
-            skillThree = informationInput.next();
+            String skillThree = informationInput.next();
+            variables.setSkillThree(skillThree);
 
             System.out.print(" ");
 
-            //Created an JSONArray with the skills. skillList is added to the JSONObject list.
+
+
+
+            //Created an JSONArray with the skills. skillList is added to the JSONObject employee.
 
             JSONArray skillsList = new JSONArray();
-            skillsList.put(skillOne);
-            skillsList.put(skillTwo);
-            skillsList.put(skillThree);
+            skillsList.put(variables.getSkillOne());
+            skillsList.put(variables.getSkillTwo());
+            skillsList.put(variables.getSkillThree());
 
             //Create am JSONObject that lists ID, Name, Email, and Skills(JSONArray)
             JSONObject employee = new JSONObject();
-            employee.put("ID", employeeId);
-            employee.put("Name", employeeName);
-            employee.put("Email", employeeEmail);
+            employee.put("ID", variables.getEmployeeId());
+            employee.put("Name", variables.getEmployeeName());
+            employee.put("Email", variables.getEmployeeEmail());
             employee.put("Skills", skillsList);
 
-            //Create JSONObject to add the JSONObject(list)
+            //Create JSONObject to add the JSONObject(employee)
             JSONObject employees = new JSONObject();
             employees.put("Employee", employee);
 
