@@ -17,48 +17,68 @@ public class EmployeeJsonFile {
         String employeeId;
         String employeeName;
         String employeeEmail;
+        String skillOne;
+        String skillTwo;
+        String skillThree;
+
+
         //Created Scanner to collect input for ID, Name, and Email
         Scanner informationInput = new Scanner(System.in);
+        try {
 
-        System.out.println("Enter ID number: ");
-        employeeId = informationInput.next();
+            System.out.print("Enter ID number: ");
+            employeeId = informationInput.next();
 
-        System.out.println("Enter Name: ");
-        employeeName = informationInput.next();
+            System.out.print("Enter Name: ");
+            employeeName = informationInput.next();
 
-        System.out.println("Enter Email: ");
-        employeeEmail = informationInput.next();
-        System.out.println("");
+            System.out.print("Enter Email: ");
+            employeeEmail = informationInput.next();
 
-        //Created JSONObject that passed the Scanner inputs into the JSON file
+            System.out.print("Enter first skill: ");
+            skillOne = informationInput.next();
 
+            System.out.print("Enter second skill: ");
+            skillTwo = informationInput.next();
 
-        JSONObject employee = new JSONObject();
-        employee.put("ID", employeeId);
-        employee.put("Name", employeeName);
-        employee.put("Email", employeeEmail);
+            System.out.print("Enter third skill: ");
+            skillThree = informationInput.next();
 
-        JSONObject employees = new JSONObject();
-        employees.put("Employee", employee);
+            System.out.print(" ");
 
-        //Created an JSONArray
-        JSONArray list = new JSONArray();
-        list.put("Java");
-        list.put("JavaScript");
-        list.put("HTML/CSS");
+            //Created an JSONArray with the skills. skillList is added to the JSONObject list.
 
-        employees.put("Skills", list);
+            JSONArray skillsList = new JSONArray();
+            skillsList.put(skillOne);
+            skillsList.put(skillTwo);
+            skillsList.put(skillThree);
 
-        try(FileWriter file = new FileWriter("EmployeeFile.json")){
+            //Create am JSONObject that lists ID, Name, Email, and Skills(JSONArray)
+            JSONObject employee = new JSONObject();
+            employee.put("ID: ", employeeId);
+            employee.put("Name: ", employeeName);
+            employee.put("Email: ", employeeEmail);
+            employee.put("Skills: ", skillsList);
 
-            file.write(employees.toString());
-            file.flush();
+            //Create JSONObject to add the JSONObject(list)
+            JSONObject employees = new JSONObject();
+            employees.put("Employee", employee);
+
+            //Write the information to a JSON file (filename: EmployeeFile.json)
+            try (FileWriter file = new FileWriter("EmployeeFile.json")) {
+
+                file.write(employees.toString());
+                file.flush();
+
+            } catch (IOException writer) {
+                System.out.println("No file created");
+            }
+            //Print the JSONObject to display the employee information that was sent to Employee.json file.
+            System.out.println(employees);
+
         }
-        catch (IOException e){
-            System.out.println("No file created");
+        catch(Exception input){
+            System.out.println("There was a problem with your data input.");
         }
-
-        System.out.println(employees);
-
     }
 }
