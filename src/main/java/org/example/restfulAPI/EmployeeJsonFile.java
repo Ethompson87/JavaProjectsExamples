@@ -16,35 +16,34 @@ public class EmployeeJsonFile {
 
         //Created Scanner to input information into variables and created an instance of the EmployeeVariables class
         Scanner informationInput = new Scanner(System.in);
-        EmployeeVariables variables = new EmployeeVariables();
+
 
         try {
 
             System.out.print("Enter ID number: ");
             String employeeId = informationInput.next();
-            variables.setEmployeeId(employeeId);
 
             System.out.print("Enter Name: ");
             String employeeName = informationInput.next();
-            variables.setEmployeeName(employeeName);
 
             System.out.print("Enter Email: ");
             String employeeEmail = informationInput.next();
-            variables.setEmployeeEmail(employeeEmail);
 
             System.out.print("Enter first skill: ");
             String skillOne = informationInput.next();
-            variables.setSkillOne(skillOne);
 
             System.out.print("Enter second skill: ");
             String skillTwo = informationInput.next();
-            variables.setSkillTwo(skillTwo);
 
             System.out.print("Enter third skill: ");
             String skillThree = informationInput.next();
-            variables.setSkillThree(skillThree);
 
-            System.out.print(" ");
+            EmployeeVariables variables = new EmployeeVariables(employeeId, employeeName, employeeEmail,
+                    skillOne, skillTwo, skillThree){
+
+            };
+
+
 
 
 
