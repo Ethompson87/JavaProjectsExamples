@@ -1,7 +1,8 @@
 package org.example.CreatingJsonFileWithInput;
 
 /*
-   Collecting the data from the input into private variables.
+   Collecting the data from the input into private variables. The get methods return the variable input to the main
+   class (EmployeeJsonFile.java) to be added to the JSON file and to printed to the console.
 
    Created by Eric Thompson
     Date: March 25, 2023
