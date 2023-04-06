@@ -68,7 +68,7 @@ public class EmployeeJsonFile {
         employees.put("Employee", employee);
 
         //Write the information to a JSON file (filename: EmployeeFile.json)
-        try (FileWriter file = new FileWriter("EmployeeFile.json")) {
+        try (FileWriter file = new FileWriter("EmployeeInformation.json")) {
 
             file.write(employees.toString());
             file.flush();
