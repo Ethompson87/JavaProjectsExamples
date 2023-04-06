@@ -10,13 +10,14 @@ public class EmployeeVariables {
     private String skillThree;
 
 
-    public EmployeeVariables(String employeeId, String employeeName, String employeeEmail, String skillOne, String skillTwo, String skillThree) {
-        this.employeeId = employeeId;
-        this.employeeName = employeeName;
-        this.employeeEmail = employeeEmail;
-        this.skillOne = skillOne;
-        this.skillTwo = skillTwo;
-        this.skillThree = skillThree;
+    public EmployeeVariables(String init_employeeId, String init_employeeName, String init_employeeEmail,
+                             String init_skillOne, String init_skillTwo, String init_skillThree) {
+        employeeId = init_employeeId;
+        employeeName = init_employeeName;
+        employeeEmail = init_employeeEmail;
+        skillOne = init_skillOne;
+        skillTwo = init_skillTwo;
+        skillThree = init_skillThree;
     }
 
     public String getEmployeeId() {
