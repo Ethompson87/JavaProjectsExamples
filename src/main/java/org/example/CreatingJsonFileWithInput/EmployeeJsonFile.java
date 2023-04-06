@@ -1,8 +1,16 @@
-/*
+package org.example.CreatingJsonFileWithInput;
 
+/*
+    Creating JSON file by collecting input of Employee ID, Name, Email, SKill one, Skill two, Skill three. The
+    skills are listed in an JSONArray. All information is added to an JSONObject. The project displays
+    what information is collected by printing the results.
+
+    Created by Eric Thompson
+    Date: March 25, 2023
+    Updated: April 5, 2023
 */
 
-package org.example.restfulAPI;
+
 
 import org.json.JSONArray;
 import org.json.JSONObject;

@@ -1,4 +1,12 @@
-package org.example.restfulAPI;
+package org.example.CreatingJsonFileWithInput;
+
+/*
+   Collecting the data from the input into private variables.
+
+   Created by Eric Thompson
+    Date: March 25, 2023
+    Updated: April 5, 2023
+ */
 
 public class EmployeeVariables {
 
