@@ -19,7 +19,7 @@ public class EmployeeVariables {
     private String skillThree;
 
 
-    public EmployeeVariables(String init_employeeId, String init_employeeName, String init_employeeEmail,
+    protected EmployeeVariables(String init_employeeId, String init_employeeName, String init_employeeEmail,
                              String init_skillOne, String init_skillTwo, String init_skillThree) {
         employeeId = init_employeeId;
         employeeName = init_employeeName;
@@ -29,59 +29,59 @@ public class EmployeeVariables {
         skillThree = init_skillThree;
     }
 
-    public String getEmployeeId() {
+    protected String getEmployeeId() {
 
         return employeeId;
     }
 
-    public void setEmployeeId(String employeeId) {
+    protected void setEmployeeId(String employeeId) {
 
         this.employeeId = employeeId;
     }
 
-    public String getEmployeeName() {
+    protected String getEmployeeName() {
 
         return employeeName;
     }
 
-    public void setEmployeeName(String employeeName) {
+    protected void setEmployeeName(String employeeName) {
 
         this.employeeName = employeeName;
     }
 
-    public String getEmployeeEmail() {
+    protected String getEmployeeEmail() {
 
         return employeeEmail;
     }
 
-    public void setEmployeeEmail(String employeeEmail) {
+    protected void setEmployeeEmail(String employeeEmail) {
 
         this.employeeEmail = employeeEmail;
     }
 
-    public String getSkillOne() {
+    protected String getSkillOne() {
 
         return skillOne;
     }
 
-    public void setSkillOne(String skillOne) {
+    protected void setSkillOne(String skillOne) {
 
         this.skillOne = skillOne;
     }
 
-    public String getSkillTwo() {
+    protected String getSkillTwo() {
         return skillTwo;
     }
 
-    public void setSkillTwo(String skillTwo) {
+    protected void setSkillTwo(String skillTwo) {
         this.skillTwo = skillTwo;
     }
 
-    public String getSkillThree() {
+    protected String getSkillThree() {
         return skillThree;
     }
 
-    public void setSkillThree(String skillThree) {
+    protected void setSkillThree(String skillThree) {
         this.skillThree = skillThree;
     }
 
