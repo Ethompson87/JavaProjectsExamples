@@ -11,22 +11,22 @@ package org.example.CreatingJsonFileWithInput;
 
 public class EmployeeVariables {
 
-    private String employeeId;
-    private String employeeName;
-    private String employeeEmail;
-    private String skillOne;
-    private String skillTwo;
-    private String skillThree;
+    private final String employeeId;
+    private final String employeeName;
+    private final String employeeEmail;
+    private final String skillOne;
+    private final String skillTwo;
+    private final String skillThree;
 
 
-    protected EmployeeVariables(String init_employeeId, String init_employeeName, String init_employeeEmail,
-                             String init_skillOne, String init_skillTwo, String init_skillThree) {
-        employeeId = init_employeeId;
-        employeeName = init_employeeName;
-        employeeEmail = init_employeeEmail;
-        skillOne = init_skillOne;
-        skillTwo = init_skillTwo;
-        skillThree = init_skillThree;
+    protected EmployeeVariables(String employeeId, String employeeName, String employeeEmail,
+                             String skillOne, String skillTwo, String skillThree) {
+        this.employeeId = employeeId;
+        this.employeeName = employeeName;
+        this.employeeEmail = employeeEmail;
+        this.skillOne = skillOne;
+        this.skillTwo = skillTwo;
+        this.skillThree = skillThree;
     }
 
     protected String getEmployeeId() {
@@ -34,56 +34,26 @@ public class EmployeeVariables {
         return employeeId;
     }
 
-    protected void setEmployeeId(String employeeId) {
-
-        this.employeeId = employeeId;
-    }
-
     protected String getEmployeeName() {
 
         return employeeName;
-    }
-
-    protected void setEmployeeName(String employeeName) {
-
-        this.employeeName = employeeName;
     }
 
     protected String getEmployeeEmail() {
 
         return employeeEmail;
     }
-
-    protected void setEmployeeEmail(String employeeEmail) {
-
-        this.employeeEmail = employeeEmail;
-    }
-
     protected String getSkillOne() {
 
         return skillOne;
-    }
-
-    protected void setSkillOne(String skillOne) {
-
-        this.skillOne = skillOne;
     }
 
     protected String getSkillTwo() {
         return skillTwo;
     }
 
-    protected void setSkillTwo(String skillTwo) {
-        this.skillTwo = skillTwo;
-    }
-
     protected String getSkillThree() {
         return skillThree;
     }
 
-    protected void setSkillThree(String skillThree) {
-        this.skillThree = skillThree;
-    }
-
-    
 }
