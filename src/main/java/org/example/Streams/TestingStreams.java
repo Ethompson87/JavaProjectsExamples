@@ -4,65 +4,68 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
-import java.util.stream.Collectors;
 
 public class TestingStreams {
 
     static String name;
     static String careerOccupation;
-    static String careerStatus;
+    static String state;
     static String addNewPerson;
     static boolean checkAddNewPerson = true;
+
 
 
     public static void main(String[] args) {
 
         Scanner enterPersonEmployment = new Scanner(System.in);
 
-        while (checkAddNewPerson == true) {
-            System.out.print("Enter Name of Person: ");
-            name = enterPersonEmployment.nextLine();
-            System.out.print("Enter Occupation: ");
-            careerOccupation = enterPersonEmployment.nextLine();
-//            System.out.println("Enter career status(Active or Retired): ");
-//            careerStatus = enterPersonEmployment.next();
-            System.out.print("Want to add another person?(Yes/No): ");
-            addNewPerson = enterPersonEmployment.nextLine();
-            if(addNewPerson.equals("No") || addNewPerson.equals("no") || addNewPerson.equals("n") || addNewPerson.equals("N")){
-               checkAddNewPerson = false;
-            }
+        List <People> listOfPeople = new ArrayList<>();
 
+        while (checkAddNewPerson) {
+            try {
+                System.out.print("Enter Name of Person: ");
+                name = enterPersonEmployment.nextLine();
+
+                System.out.print("Enter Occupation: ");
+                careerOccupation = enterPersonEmployment.nextLine();
+
+                System.out.print("Enter State of Residency: ");
+                state = enterPersonEmployment.nextLine();
+
+                listOfPeople.add(new People(name, careerOccupation, state.toUpperCase()));
+
+                System.out.print("Want to add another person?(Yes/No): ");
+                addNewPerson = enterPersonEmployment.nextLine();
+
+                System.out.println("------------------------");
+
+                if (addNewPerson.equals("No") || addNewPerson.equals("no") || addNewPerson.equals("n") || addNewPerson.equals("N")) {
+                    checkAddNewPerson = false;
+                } else if (addNewPerson.equals("Yes") || addNewPerson.equals("yes") || addNewPerson.equals("y") || addNewPerson.equals("Y")) {
+                    checkAddNewPerson = true;
+
+                } else {
+                    System.out.println("You didn't select Yes or No, so by default the program selected \"No\"");
+                    checkAddNewPerson = false;
+                }
+
+            } catch (Exception e) {
+                System.out.println("There was a problem with your data.");
+
+            }
         }
         enterPersonEmployment.close();
 
-        List <People> listOfPeople = new ArrayList<>();
-        listOfPeople.add(new People(name, careerOccupation, EmploymentStatus.ACTIVE));
+
 
         List <People> arrangeListOfPeople = listOfPeople.stream()
-                .filter(status -> status.getPersonStatus().equals(EmploymentStatus.ACTIVE))
+                .filter(status -> status.getPersonState().equals(StateOfResidency.CALIFORNIA.toString()))
                 .sorted(Comparator.comparing(People::getPersonName))
-                .collect(Collectors.toList());
+                .toList();
 
         arrangeListOfPeople.forEach(System.out::println);
 
     }
 
-
-//    static EmploymentStatus checkEmploymentStatus(String statusOfCareer){
-//
-//        EmploymentStatus status = null;
-//
-//        if(statusOfCareer == "Active") {
-//            status = EmploymentStatus.ACTIVE;
-//        }
-//        else if(statusOfCareer == "Retired"){
-//            status = EmploymentStatus.RETIRED;
-//        }
-//        else{
-//            System.out.println("You didn't enter Active or Retired.");
-//        }
-//        return status;
-//    }
-
-
 }
+

@@ -3,12 +3,12 @@ package org.example.Streams;
 public class People {
     private final String personName;
     private final String personCareer;
-    private final EmploymentStatus personStatus;
+    private final String personState;
 
-    public People(String personName, String personCareer, EmploymentStatus personStatus) {
+    public People(String personName, String personCareer, String personStatus) {
         this.personName = personName;
         this.personCareer = personCareer;
-        this.personStatus = personStatus;
+        this.personState = personStatus;
     }
 
     public String getPersonName() {
@@ -19,16 +19,15 @@ public class People {
         return personCareer;
     }
 
-    public EmploymentStatus getPersonStatus() {
-        return personStatus;
+    public String getPersonState() {
+        return personState;
     }
 
     @Override
     public String toString() {
-        return "People{" +
-                "Person Name='" + personName + '\'' +
-                ", Person Career='" + personCareer + '\'' +
-                ", Person Status=" + personStatus +
-                '}';
+        return "Person Name ='" + personName + '\'' +
+                ", Person Career ='" + personCareer + '\'' +
+                ", Person State ='" + personState +
+                "'";
     }
 }
